@@ -36,6 +36,6 @@ class BookOrderingFilter(filters.OrderingFilter):
         self.ordering_fields = [
             ('title', 'title'),
             ('-title', '-title'),
-            ('year_of_publication', 'year'),
-            ('-year_of_publication', '-year')
+            ('year_of_publication', 'year_of_publication'),
+            ('-year_of_publication', '-year_of_publication')
         ]
