@@ -1,5 +1,6 @@
 from rest_framework import generics, permissions
 from django_filters import rest_framework as django_filters
+
 from .models import Book
 from .serializers import BookCreateSerializer, BookListSerializer
 from .filters import BookFilter, BookOrderingFilter
@@ -15,6 +16,7 @@ class BookListView(generics.ListCreateAPIView):
     filter_backends = [django_filters.DjangoFilterBackend, BookOrderingFilter]
     filterset_class = BookFilter
 
+    # BookListSerializer - легковесный (без preface и cover) для списка
     def get_serializer_class(self):
         if self.request.method == 'POST':
             return BookCreateSerializer
