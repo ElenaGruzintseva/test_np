@@ -30,7 +30,6 @@ class BookFilter(django_filters.FilterSet):
 
 class BookOrderingFilter(filters.OrderingFilter):
     # Явно указываем разрешённые поля сортировки для индексированных полей.
-    # Для поля year_of_publication ищем по year - так проще.
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.ordering_fields = [
