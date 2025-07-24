@@ -9,6 +9,7 @@ class Author(models.Model):
     date_of_birth = models.DateField()
     autobiography = models.TextField()
 
+    # Добавлено отображение года рождения, т.к. имена могут повторяться
     def __str__(self):
         return f'{self.name} ({self.date_of_birth.year})'
 
